@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import SelectionBar from './SelectionBar';
+import SelectionBar from './selection_bar/SelectionBar';
 
 export default class App extends Component {
   render() {
