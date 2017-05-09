@@ -13,6 +13,7 @@ export default class SelectionBar extends Component {
                 <Row>
                     <MonthPicker/>
                 </Row>
+                <div id="calendar"></div>
             </Grid>
         );
     }

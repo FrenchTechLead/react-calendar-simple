@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import {Row, Col} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './../../css/month-picker.css';
-import $ from 'jquery';
+import Calendar from './../calendar/Calendar';
+import ReactDOM from 'react-dom';
+
 
 export default class MonthPicker extends Component {
 
@@ -35,6 +37,7 @@ export default class MonthPicker extends Component {
             let date = this.state.selectedDate;
             date.setMonth(index);
             this.setState({selectedDate:date});
+            ReactDOM.render(<Calendar focusOnDate={date}/>,document.getElementById("calendar"));
         }
     }
 
@@ -42,7 +45,7 @@ export default class MonthPicker extends Component {
         if(this.state.currentView === "years"){
             let years = this.state.cells;
             for(let i=0; i<12 ; i++)
-                years[i] = years[i] - 12;
+                years[i] -= 12;
             this.setState({cells:years});
         }else{
             let cells =[];
@@ -58,7 +61,7 @@ export default class MonthPicker extends Component {
         if(this.state.currentView === "years"){
             let years = this.state.cells;
             for(let i=0; i<12 ; i++)
-                years[i] = years[i] + 12;
+                years[i] += 12;
             this.setState({cells:years});
         }else{
             let cells =[];
@@ -84,10 +87,7 @@ export default class MonthPicker extends Component {
         let body = [];
         for( let i = 0 ; i< 12 ; i++){
             let cellContent = this.state.cells[i];
-            let active = "";
-            if(cellContent === new Date().getFullYear())
-                active="active";
-            body.push(<Col key={i} xs={4} onClick={()=>{this.selectCell(cellContent, i)}} className={"text-center cell "+active}>{cellContent}</Col>);
+            body.push(<Col key={i} xs={4} onClick={()=>{this.selectCell(cellContent, i)}} className={"text-center cell"}>{cellContent}</Col>);
         }
 
 

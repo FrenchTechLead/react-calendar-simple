@@ -24,8 +24,7 @@ export default class Calendar extends Component {
             let day = AllDaysOfMonth[i];
             if(i === 0){
                 let firstDayOfMonth = day.getUTCDay();
-                console.log(firstDayOfMonth);
-                if(firstDayOfMonth != 0){
+                if(firstDayOfMonth !== 0){
                     for(let j=1; j<=firstDayOfMonth;j++){
                         cols[j].push(null);
                     }
@@ -39,9 +38,9 @@ export default class Calendar extends Component {
         for(let i=0 ; i<7 ; i++){
             head.push(
                 <div key={i} className="col span_1_of_7">
-                    <label>
+                    <div className="text-center">
                         {days[i]}
-                    </label>
+                    </div>
                     <DaysColumn
                         days={cols[(i+1)%7]}
                         focusOnDay={this.state.focusOnDate}

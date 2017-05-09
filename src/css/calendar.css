@@ -1,0 +1,63 @@
+.selectable{
+    font-size: 16px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.selectable:hover{
+    color:white;
+    background-color: cornflowerblue;
+}
+
+label{
+    text-align: center;
+}
+/*  SECTIONS  */
+.section {
+    clear: both;
+    padding: 0px;
+    margin: 0px;
+}
+
+/*  COLUMN SETUP  */
+.col {
+    display: block;
+    float:left;
+    margin: 1% 0 1% 0.2%;
+}
+.col:first-child { margin-left: 0; }
+
+/*  GROUPING  */
+.group:before,
+.group:after { content:""; display:table; }
+.group:after { clear:both;}
+.group { zoom:1; /* For IE 6/7 */ }
+
+/*  GRID OF SEVEN  */
+.span_7_of_7 {
+    width: 100%;
+}
+
+.span_6_of_7 {
+    width: 85.68%;
+}
+
+.span_5_of_7 {
+    width: 71.37%;
+}
+
+.span_4_of_7 {
+    width: 57.05%;
+}
+
+.span_3_of_7 {
+    width: 42.74%;
+}
+
+.span_2_of_7 {
+    width: 28.42%;
+}
+
+.span_1_of_7 {
+    width: 14.11%;
+}

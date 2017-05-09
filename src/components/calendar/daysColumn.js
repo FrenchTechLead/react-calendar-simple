@@ -18,13 +18,15 @@ export default class DaysColumn extends Component {
 
         let days = [];
         for (let i=0; i< this.state.days.length; i++){
-            let dateString ="";
+            let dateString, selectable ="";
+
             if(this.state.days[i] !== null){
-                 dateString = this.state.days[i].toDateString();
+                 dateString = this.state.days[i].getDate();
+                 selectable = "selectable";
             }else{
-                 dateString = "<NULL>";
+                 dateString = "-";
             }
-            days.push(<p>{dateString}</p>);
+            days.push(<p className={"text-center "+selectable}>{dateString}</p>);
         }
 
 
