@@ -22,4 +22,4 @@ module.exports ={
         "Nov",
         "Dec"
     ]
-}
+}; // You can modify this Object to set another local

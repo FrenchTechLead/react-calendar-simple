@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './../../css/calendar.css';
-
+import DayCell from "./dayCell";
 
 export default class DaysColumn extends Component {
 
@@ -18,18 +18,17 @@ export default class DaysColumn extends Component {
 
         let days = [];
         for (let i=0; i< this.state.days.length; i++){
-            let dateString, selectable ="";
-
-            if(this.state.days[i] !== null){
-                 dateString = this.state.days[i].getDate();
-                 selectable = "selectable";
+            let date = this.state.days[i];
+            if(date !== null){
+                days.push(<DayCell key={i}
+                                   date={date}
+                                   onDaySelection={(selectedDate)=>{this.props.onDaySelection(selectedDate)}}
+                />);
             }else{
-                 dateString = "-";
+                days.push(<div key={i} className="not-selectable">-</div>);
             }
-            days.push(<p className={"text-center "+selectable}>{dateString}</p>);
+
         }
-
-
         return (
             <div>
                 {days}

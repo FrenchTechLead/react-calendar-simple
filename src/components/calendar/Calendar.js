@@ -6,7 +6,8 @@ export default class Calendar extends Component {
 
     constructor(props){
         super();
-        this.state = {focusOnDate:props.focusOnDate}
+        let days = (props.daysArray && props.daysArray.length === 7) ? props.daysArray : require("./../../config/locals").days;
+        this.state = {focusOnDate:props.focusOnDate, days:days};
     }
 
     componentWillReceiveProps(nextProps){
@@ -15,7 +16,7 @@ export default class Calendar extends Component {
 
 
     render() {
-        let days=require("./../../config/locals").days;
+        let days= this.state.days;
         let cols=[[],[],[],[],[],[],[]];
 
         let AllDaysOfMonth = getDaysInMonth(this.state.focusOnDate.getMonth(),this.state.focusOnDate.getFullYear());
@@ -38,12 +39,13 @@ export default class Calendar extends Component {
         for(let i=0 ; i<7 ; i++){
             head.push(
                 <div key={i} className="col span_1_of_7">
-                    <div className="text-center">
+                    <div>
                         {days[i]}
                     </div>
                     <DaysColumn
                         days={cols[(i+1)%7]}
                         focusOnDay={this.state.focusOnDate}
+                        onDaySelection={(selectedDate)=>{this.props.onDateSelection(selectedDate)}}
                     />
                 </div>);
         }

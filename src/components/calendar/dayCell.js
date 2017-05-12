@@ -1,24 +1,21 @@
 import React, { Component } from 'react';
 import './../../css/calendar.css';
-
-
 export default class DayCell extends Component {
 
     constructor(props){
-        super();
-        this.state = {active:props.active, date: props.date}
+        super(props);
+        this.state = {date: this.props.date}
     }
 
     componentWillReceiveProps(nextProps){
-        this.setState({active:nextProps.active, date: props.date});
+        this.setState({ date: nextProps.date});
     }
-
 
     render() {
 
         return (
-            <div>
-                {this.state.active}
+            <div className="selectable" onClick={()=>{this.props.onDaySelection(this.state.date)}}>
+                {this.state.date.getDate()}
             </div>
         );
     }
