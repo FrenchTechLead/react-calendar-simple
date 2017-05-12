@@ -1,6 +1,6 @@
 {
   "name": "react-calendar-simple",
-  "description": "This is a very light component that makes it possible to preview a month and returns the selected day when clicked",
+  "description": "This is a very light component that makes it possible to preview the month days of a given date then it returns the selected day when clicked;",
   "version": "0.1.1",
   "author": "Akram MECHERI",
   "repository": {
