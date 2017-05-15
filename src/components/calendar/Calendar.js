@@ -38,7 +38,7 @@ export default class Calendar extends Component {
         let head =[];
         for(let i=0 ; i<7 ; i++){
             head.push(
-                <div key={i} className="col span_1_of_7">
+                <div key={i} className="col_cal span_1_of_7_cal">
                     <div>
                         {days[i]}
                     </div>
@@ -52,7 +52,7 @@ export default class Calendar extends Component {
 
         return (
             <div>
-                <div className="section group">
+                <div className="section_cal group_cal">
                     {head}
                 </div>
             </div>

@@ -1,4 +1,4 @@
-.selectable, .not-selectable{
+.selectable_cal, .not-selectable_cal{
     font-size: 16px;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -6,38 +6,35 @@
 }
 
 
-.selectable:hover{
+.selectable_cal:hover{
     color:white;
     background-color: cornflowerblue;
     cursor: pointer;
 }
 
-label{
-    text-align: center;
-}
 /*  SECTIONS  */
-.section {
+.section_cal {
     clear: both;
     padding: 0px;
     margin: 0px;
 }
 
 /*  COLUMN SETUP  */
-.col {
+.col_cal {
     display: block;
     float:left;
     margin: 1% 0 1% 0.2%;
     height: 100%;
 }
-.col:first-child { margin-left: 0; }
+.col_cal:first-child { margin-left: 0; }
 
 /*  GROUPING  */
-.group:before,
-.group:after { content:""; display:table; }
-.group:after { clear:both;}
-.group { zoom:1; /* For IE 6/7 */ }
+.group_cal:before,
+.group_cal:after { content:""; display:table; }
+.group_cal:after { clear:both;}
+.group_cal { zoom:1; /* For IE 6/7 */ }
 
-.span_1_of_7 {
+.span_1_of_7_cal {
     width: 14.11%;
     height: 20%;
     text-align: center;

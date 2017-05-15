@@ -14,7 +14,7 @@ export default class DayCell extends Component {
     render() {
 
         return (
-            <div className="selectable" onClick={()=>{this.props.onDaySelection(this.state.date)}}>
+            <div className="selectable_cal" onClick={()=>{this.props.onDaySelection(this.state.date)}}>
                 {this.state.date.getDate()}
             </div>
         );

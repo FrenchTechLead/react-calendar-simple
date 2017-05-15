@@ -25,7 +25,7 @@ export default class DaysColumn extends Component {
                                    onDaySelection={(selectedDate)=>{this.props.onDaySelection(selectedDate)}}
                 />);
             }else{
-                days.push(<div key={i} className="not-selectable">-</div>);
+                days.push(<div key={i} className="not-selectable_cal">-</div>);
             }
 
         }
